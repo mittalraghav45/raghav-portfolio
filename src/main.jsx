@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
-const portrait = 'https://portfolio-raghav-seven.vercel.app/Linkedln.jpg';
+const portrait = "/profile.jpeg";
 const projects = [
  {name:'MovieFlix', label:'AI product demo · Movie GPT', description:'AI-enabled streaming application using OpenAI GPT and TMDB APIs to help users discover and explore films through a conversational experience.', tags:['OpenAI GPT API','React','Redux','TMDB API','Firebase'], video:'https://www.dropbox.com/scl/fi/isi8cmsa1gz9bt9glhtpf/Movie-GPT.mp4?rlkey=phz7ukvucfymrmsadnqjc0snq&st=xx29objo&dl=1', repo:'https://github.com/mittalraghav45/youtube'},
  {name:'Stream Box', label:'Streaming product demo · Stream Box', description:'Streaming-focused web experience with a clean interface designed for content discovery and an engaging product experience.', tags:['React','JavaScript','API Integration','Responsive UI'], video:'https://www.dropbox.com/scl/fi/4y3cmlvtlz41y2xjdowk9/StreamBox.mp4?rlkey=rxttpwytxa1tjr0omoubx8e6t&st=nr1vomht&dl=1', repo:'https://github.com/mittalraghav45/youtube'},
