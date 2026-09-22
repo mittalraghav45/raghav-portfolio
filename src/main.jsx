@@ -1,21 +1,69 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
 import { Analytics } from '@vercel/analytics/react';
 import './styles.css';
 
-const portrait = '/profile.jpeg';
-const healthcareThumbnail = 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85';
 const projects = [
- {name:'MovieFlix', description:'A responsive movie discovery experience with searchable content and a clean viewing interface.', tags:['React','API','UI/UX'], image:'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85', demo:'https://github.com/mittalraghav45/MovieFlix'},
- {name:'Stream Box', description:'A streaming interface concept focused on content browsing and modern media presentation.', tags:['React','JavaScript','CSS'], image:'https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=1200&q=85', demo:'https://github.com/mittalraghav45/Stream-Box'},
- {name:'Healthcare Portal', description:'Role-based healthcare management application with reusable React components and API-driven patient and staff workflows.', tags:['React','Material UI','JSON Server','Role-based access'], repo:'https://github.com/mittalraghav45/EHR', image:healthcareThumbnail}
+  {
+    title: 'MovieFlix',
+    description: 'An AI-powered movie discovery experience built with OpenAI APIs, delivering intelligent recommendations and a conversational search workflow.',
+    tags: ['React', 'OpenAI APIs', 'AI recommendations', 'TMDB API'],
+    image: '/movieflix.png',
+    link: 'https://github.com/mittalraghav45/GPTflix',
+    video: 'https://www.dropbox.com/scl/fi/isi8cmsa1gz9bt9glhtpf/Movie-GPT.mp4?rlkey=phz7ukvucfymrmsadnqjc0snq&st=xx29objo&dl=1',
+  },
+  {
+    title: 'Stream Box',
+    description: 'A modern streaming platform interface designed for browsing, discovering, and enjoying video content across devices.',
+    tags: ['React', 'JavaScript', 'Responsive UI'],
+    image: '/streambox.png',
+    link: 'https://github.com/mittalraghav45/youtube',
+    video: 'https://www.dropbox.com/scl/fi/4y3cmlvtlz41y2xjdowk9/StreamBox.mp4?rlkey=rxttpwytxa1tjr0omoubx8e6t&st=nr1vomht&dl=1',
+  },
+  {
+    title: 'Healthcare Portal',
+    description: 'A secure healthcare portal concept focused on clear patient workflows, accessible information, and a polished clinical experience.',
+    tags: ['React', 'Healthcare UX', 'Responsive UI'],
+    image: '/healthcare.png',
+    link: 'https://github.com/mittalraghav45/EHR',
+  },
 ];
-const skills=['React.js','Next.js','TypeScript','JavaScript','GraphQL','OpenAI API','AWS','CI/CD','Node.js','PHP','MongoDB','PostgreSQL','Jest','Playwright','GitHub Actions','GCP','RabbitMQ','Accessibility'];
-const certifications=[
- {name:'Highfield Level 2 Certificate in Spectator Safety',issuer:'Highfield · Southampton Football Club Limited',date:'Awarded 29 May 2025',status:'Achieved',skills:'Safety procedures, incident response, conflict management'},
- {name:'AWS Certified Cloud Practitioner',issuer:'Amazon Web Services',date:'6 October 2020 — 6 October 2023',status:'Achieved',skills:'Cloud concepts, AWS services, security, billing and support'},
- {name:'Certified Ethical Hacker Practical',issuer:'EC-Council',date:'16 August 2020 — 31 August 2023',status:'Achieved',skills:'Web application security, vulnerability analysis, network scanning'}
+
+const experiences = [
+  { role: 'Graduate Software Developer', company: 'NHS England', period: '2024 — Present', description: 'Building accessible, reliable digital services that support better healthcare experiences.' },
+  { role: 'Full Stack Developer', company: 'Freelance', period: '2022 — 2024', description: 'Designed and delivered responsive products from concept through deployment.' },
 ];
-function App(){return <><header className="nav"><div className="container navin"><a className="brand" href="#top">RAGHAV MITTAL</a><nav><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav></div></header><main id="top" className="container"><section className="hero"><div><div className="eyebrow">AI-focused software engineer · London, UK</div><h1>Building <span>intelligent</span>, scalable web experiences.</h1><p>Full-stack engineer specialising in React, JavaScript, AI-powered products, and reliable production systems. I turn complex workflows into useful experiences for real users.</p><div className="actions"><a className="btn primary" href="#work">Explore projects</a><a className="btn" href="mailto:mittalraghav45@gmail.com">Contact me</a><a className="btn" href="/Raghav_CV.pdf" download>Download CV</a></div></div><div className="profile"><img src={portrait} alt="Portrait of Raghav Mittal"/></div></section><section className="metrics"><Metric value="React" label="modern product development"/><Metric value="100k+" label="monthly users supported"/><Metric value="15%" label="lower infrastructure costs"/><Metric value="2+ yrs" label="professional experience"/></section><section id="work" className="section"><h2>Selected projects</h2><p className="intro">Selected products demonstrating API-driven interfaces, reusable React architecture, and practical user experiences.</p><div className="projects">{projects.map((p)=><article className="project" key={p.name}><div className="thumb"><img className="project-image" src={p.image} alt={`${p.name} thumbnail`} /></div><div className="body"><h3>{p.name}</h3><p>{p.description}</p><div className="tags">{p.tags.map(t=><span className="tag" key={t}>{t}</span>)}</div><div className="links">{p.demo&&<a href={p.demo} target="_blank" rel="noreferrer">View project ↗</a>}{p.repo&&<a href={p.repo} target="_blank" rel="noreferrer">GitHub ↗</a>}</div></div></article>)}</div></section><section id="experience" className="section"><h2>Professional experience</h2><div className="timeline"><Role title="Software Engineer · IndiaMART InterMesh Ltd" meta="Jun 2021 — Aug 2023 · India">Built React, Next.js, Node.js, PHP, MongoDB, and RabbitMQ solutions for Seller Academy, tender discovery, uploads, notifications, and platform operations. Contributed to 100,000 monthly users, 15% transaction growth, and 15% lower CMS infrastructure costs.</Role><Role title="Associate Software Engineer · IndiaMART InterMesh Ltd" meta="Mar 2021 — Jun 2021 · India">Developed web modules with JavaScript, React, HTML, CSS, and PHP while investigating defects, documenting root causes, and improving application reliability.</Role></div></section><section id="skills" className="section"><h2>Technical toolkit</h2><p className="intro">Frontend engineering, backend services, testing, cloud delivery, and production observability.</p><div className="skills">{skills.map(s=><span className={'skill '+(['GraphQL','OpenAI API','AWS','CI/CD'].includes(s)?'ai':'')} key={s}>{s}</span>)}</div></section><section id="education" className="section"><h2>Education</h2><p className="intro">My academic background combines AI and data-driven technologies with practical web development, secure software engineering, SDLC methods, cloud applications, and technical documentation.</p><div className="education-grid"><article className="education-card"><div className="eyebrow">Sep 2023 — Dec 2024 · Merit</div><h3>MSc Computer Science</h3><h4>University of Southampton</h4><p>Focused on AI and data-driven technologies, software project management, secure development, software security, web and cloud applications development, digital forensics, research methods, and an MSc project.</p><div className="tags"><span className="tag ai">AI & data-driven technologies</span><span className="tag">Web development</span><span className="tag">Cloud applications</span><span className="tag">SDLC & secure development</span></div></article><article className="education-card"><div className="eyebrow">Sep 2017 — Aug 2021 · First Division</div><h3>B.Tech Computer Science & Engineering</h3><h4>Amity University</h4><p>Built foundations in software development, algorithms, databases, AI, machine learning, cloud computing, distributed systems, cybersecurity, Java, and web technologies through coursework, projects, and practical training.</p><div className="tags"><span className="tag">Artificial Intelligence</span><span className="tag">Machine learning</span><span className="tag">Software engineering</span><span className="tag">Cloud & security</span></div></article></div></section><section id="certifications" className="section"><h2>Certifications</h2><div className="certifications">{certifications.map(c=><article className="cert" key={c.name}><div className="cert-status">{c.status}</div><h3>{c.name}</h3><h4>{c.issuer}</h4><p className="meta">{c.date}</p><p>{c.skills}</p></article>)}</div></section><section id="contact" className="contact"><div><div className="eyebrow light">Let’s connect</div><h2>Have a software role in mind?</h2><p>I’m open to software engineering opportunities where I can build reliable products and create thoughtful user experiences.</p><p className="visa">UK Graduate Visa Holder</p></div><div><a className="btn primary" href="mailto:mittalraghav45@gmail.com">Email me</a><a className="btn inverse" href="https://www.linkedin.com/in/raghav-mittal-dev/" target="_blank" rel="noreferrer">LinkedIn ↗</a></div></section><footer><span>© 2026 Raghav Mittal</span><span>React · Full-stack development</span></footer></main><Analytics /></>}
-function Metric({value,label}){return <div className="metric"><strong>{value}</strong><span>{label}</span></div>}; function Role({title,meta,children}){return <article className="role"><h3>{title}</h3><div className="meta">{meta}</div><p>{children}</p></article>};
-createRoot(document.getElementById('root')).render(<App/>);
+
+const skills = ['React', 'JavaScript', 'TypeScript', 'Node.js', 'Python', 'SQL', 'AWS', 'Git', 'Figma'];
+const education = [
+  { degree: 'MSc Software Engineering', institution: 'University of Southampton', period: '2023 — 2024' },
+  { degree: 'BSc Computer Science', institution: 'Amity University', period: '2019 — 2023' },
+];
+
+function SectionHeading({ eyebrow, title }) {
+  return <div className="section-heading"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2></div>;
+}
+
+function DemoVideo({ project }) {
+  if (!project.video) return null;
+  return <details className="demo-video"><summary><span aria-hidden="true">▶</span> Watch project demo</summary><video controls preload="metadata" playsInline src={project.video}><a href={project.video}>Open the project demo video</a></video></details>;
+}
+
+function App() {
+  return (
+    <>
+      <Analytics />
+      <header className="site-header"><a className="brand" href="#top">RAGHAV MITTAL</a><nav aria-label="Primary navigation">{['Work', 'Experience', 'Skills', 'Education', 'Contact'].map((item) => <a key={item} href={`#${item.toLowerCase()}`}>{item}</a>)}</nav></header>
+      <main id="top">
+        <section className="hero section-shell"><div className="hero-copy"><span className="eyebrow">SOFTWARE ENGINEER · BUILDER · PROBLEM SOLVER</span><h1>Building intelligent, scalable web experiences.</h1><p>I’m Raghav, a software engineer who turns complex problems into clear, useful digital products.</p><div className="hero-actions"><a className="button primary" href="#work">View selected work</a><a className="button secondary" href="/Raghav_CV.pdf">Download CV</a></div></div><div className="hero-image-wrap"><img className="hero-image" src="/profile.jpeg" alt="Raghav Mittal" /></div></section>
+        <section id="work" className="section-shell section-block"><SectionHeading eyebrow="01 / SELECTED WORK" title="Projects that solve real problems." /><div className="project-grid">{projects.map((project) => <article className="project" key={project.title}><img src={project.image} alt={`${project.title} project preview`} /><div className="project-body"><h3>{project.title}</h3><p>{project.description}</p><div className="tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="project-actions"><a className="text-link" href={project.link} target="_blank" rel="noreferrer">View on GitHub <span aria-hidden="true">↗</span></a><DemoVideo project={project} /></div></div></article>)}</div></section>
+        <section id="experience" className="section-shell section-block"><SectionHeading eyebrow="02 / EXPERIENCE" title="Learning by building." /><div className="timeline">{experiences.map((item) => <article className="timeline-item" key={`${item.role}-${item.company}`}><div><h3>{item.role}</h3><p className="muted">{item.company}</p></div><div><p className="period">{item.period}</p><p>{item.description}</p></div></article>)}</div></section>
+        <section id="skills" className="section-shell section-block"><SectionHeading eyebrow="03 / TOOLKIT" title="Tools I use to move ideas forward." /><div className="skill-list">{skills.map((skill) => <span key={skill}>{skill}</span>)}</div></section>
+        <section id="education" className="section-shell section-block"><SectionHeading eyebrow="04 / EDUCATION" title="The foundation behind the work." /><div className="education-list">{education.map((item) => <article className="education-item" key={item.degree}><div><h3>{item.degree}</h3><p>{item.institution}</p></div><p className="period">{item.period}</p></article>)}</div></section>
+        <section id="contact" className="contact section-shell section-block"><SectionHeading eyebrow="05 / CONTACT" title="Have a problem worth solving?" /><p>Let’s talk about building something useful, thoughtful, and built to last.</p><a className="button primary" href="mailto:mittalraghav45@gmail.com">Get in touch</a></section>
+      </main>
+      <footer className="site-footer section-shell"><span>© {new Date().getFullYear()} Raghav Mittal</span><a href="mailto:mittalraghav45@gmail.com">mittalraghav45@gmail.com</a></footer>
+    </>
+  );
+}
+
+export default App;
