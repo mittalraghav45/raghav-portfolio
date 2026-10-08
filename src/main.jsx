@@ -6,7 +6,7 @@ import './styles.css';
 const projects = [
   { title: 'MovieFlix', description: 'An AI-powered movie discovery experience built with OpenAI APIs, delivering intelligent recommendations and a conversational search workflow.', tags: ['React', 'OpenAI APIs', 'AI recommendations', 'TMDB API'], link: 'https://github.com/mittalraghav45/GPTflix', video: 'https://www.dropbox.com/scl/fi/isi8cmsa1gz9bt9glhtpf/Movie-GPT.mp4?rlkey=phz7ukvucfymrmsadnqjc0snq&st=xx29objo&dl=1' },
   { title: 'Stream Box', description: 'A modern streaming platform interface designed for browsing, discovering, and enjoying video content across devices.', tags: ['React', 'JavaScript', 'Responsive UI'], link: 'https://github.com/mittalraghav45/youtube', video: 'https://www.dropbox.com/scl/fi/4y3cmlvtlz41y2xjdowk9/StreamBox.mp4?rlkey=rxttpwytxa1tjr0omoubx8e6t&st=nr1vomht&dl=1' },
-  { title: 'Healthcare Portal', description: 'A role-based healthcare management application built with React, Material UI, and JSON Server for patient and staff portals.', tags: ['React', 'Material UI', 'JSON Server'], link: 'https://github.com/mittalraghav45/EHR' },
+  { title: 'Healthcare Portal', description: 'A role-based healthcare management application built with React, Material UI, and JSON Server for patient and staff portals.', tags: ['React', 'Material UI', 'JSON Server'], link: 'https://github.com/mittalraghav45/EHR', video: '/cloud-surgery-demo.webm' },
 ];
 
 const experiences = [
